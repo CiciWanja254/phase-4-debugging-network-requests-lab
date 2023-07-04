@@ -47,6 +47,17 @@ features are broken.
 
 Use your debugging tools to find and fix these issues.
 
+Debugging Process
+Objective 1: Add a new toy when the toy form is submitted
+Issue: No network request is being made when submitting the form.
+Solution: The create action in the toys_controller.rb was missing. Updated the create action to handle the toy creation by creating a new toy instance, saving it to the database, and returning a JSON response with the created toy's data.
+Objective 2: Update the number of likes for a toy
+Issue: No network request is being made when clicking the like button.
+Solution: The update action in the toys_controller.rb was missing. Updated the update action to handle the like update by finding the toy based on the provided ID, updating the likes count, and returning a JSON response with the updated toy's data.
+Objective 3: Donate a toy to Goodwill (and delete it from our database)
+Issue: No network request is being made when clicking the delete button.
+Solution: The destroy action in the toys_controller.rb was missing. Added the destroy action to handle the deletion of a toy by finding the toy based on the provided ID, deleting it from the database, and returning a JSON response with a success message.
+
 There are no tests for this lesson, so you'll need to do your debugging in the
 browser and using the Rails server logs and `byebug`.
 
